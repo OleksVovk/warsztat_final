@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from insta.views import MainPageView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('instagrum/'),
+    path('instagrum/', MainPageView.as_view(), name="main"),
     # path('login/'),
     # path('create_user/'),
     # path('user/<id>/'),
