@@ -1,0 +1,6 @@
+{% load static %}
+{% block stylesheets %}
+    {% for css in styles %}
+        <link rel="stylesheet" href="{% static css %}"
+    {% endfor %}
+{% endblock %}

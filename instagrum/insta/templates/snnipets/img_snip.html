@@ -1,0 +1,9 @@
+{% load static %}
+{% for img in imgs %}
+<div class="img-container">
+    <img src="{% static img.path %}" width="200" height="200">
+    <p>{{ img.user }}</p>
+</div>
+{% empty %}
+<p>nic tu nie ma</p>
+{% endfor %}
