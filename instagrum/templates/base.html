@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% block head %}
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/app.js" type="text/javascript"></script>
+
+        <title>{% block title %}{% endblock %} | <!--Tutaj główny tytuł--> Moja strona</title>
+    </head>
+{% endblock head %}
+
+
+<body>
+    <div id="content">
+        {% block content %}
+            <!--Tutaj treść-->
+        {% endblock content %}
+    </div>
+
+    <div id="footer">
+        {% block footer %}
+            <!--Tutaj stopka-->
+
+        Dzisiaj jest {{ now }}.
+        <br>
+        Wersja strony {{ }}
+        <br>
+        Jesteś jako {{ user }}
+        <br>
+        {% if auth %}
+            <a href="/accounts/logout/"> Wyloguj </a>
+        {% else %}
+            <a href="/accounts//login/"> Zaloguj </a>
+        {% endif %}
+        {% endblock footer %}
+    </div>
+</body>
+</html>
